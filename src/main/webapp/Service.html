@@ -1,0 +1,48 @@
+<div ng-controller="ServiceController">
+<div class="container">
+  <ul class="breadcrumb">
+    <li><a href="#">Home</a></li>
+    <li><a href="#Subscription">Subscription</a></li>
+    <li class="active">Service</li>  
+  </ul>
+</div>
+
+<div>
+<div class="col-xs-4 titleOfButtonLink">
+<a ng-mouseenter="changeColor($event)" ng-mouseout="deleteClass($event)"  data-toggle="modal" data-target="#AddServiceModal"><img src="img/custom/Plus-80.png" alt="Service" class="tileImage"><label>Add Service</label></a>
+  <!-- Modal -->
+  <div class="modal fade" id="AddServiceModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add Service</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+    First name:<input type="text" name="firstname"><br>
+    Last name:<input type="text" name="lastname"><br>
+</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+</div>
+
+<div class="col-xs-4 titleOfButtonLink">
+<a href="#ViewService" ng-mouseenter="changeColor($event)" ng-mouseout="deleteClass($event)"><img src="img/custom/Glasses-96.png" alt="flow" class="tileImage"><label>View service</label></a>
+</div>
+
+<div class="col-xs-4 titleOfButtonLink">
+<a href="#ManageService" ng-mouseenter="changeColor($event)" ng-mouseout="deleteClass($event)"><img src="img/custom/Manage-96.png" alt="Destination" class="tileImage"><label>Manage Service</label></a>
+</div>
+
+</div>
+</div>

@@ -1,0 +1,129 @@
+<div  layout="row" layout-padding
+	ng-controller="CreateUserController" layout-align="center center">
+	<span flex-gt-xs="5"></span>
+	<form class="registrationForm" name="registrationForm" novalidate flex-gt-xs=66 >
+		<div layout-gt-xs="row" layout-align="center center">
+		<md-toolbar style="min-height:35px">
+		 <h13 flex class="align-items">USER REGISTRATION</h13>
+		</md-toolbar>
+			</div>
+			<br>
+			
+			
+		<div layout-gt-xs="row">
+			<md-input-container class="md-block" flex-gt-xs> <label for="country">Security Domain:**</label>
+			<md-select ng-model="domainNew" material-select> <md-option
+				ng-repeat="domain in domainNames" ng-value="country">{{domain}}</md-option>
+			</md-select>
+			</md-input-container>
+			<md-input-container class="md-block" flex-gt-xs>
+		<label for="userId">User ID:*</label> <input type="text"
+			ng-model="userId"> 
+			</md-input-container>
+		</div>
+		
+			
+			
+
+		<div layout-gt-xs="row">
+			<md-input-container class="md-block" flex-gt-xs>
+			<label for="passwordNew">Password:*</label> <input type="password"
+				ng-model="passwordNew">
+				</md-input-container>
+
+			<md-input-container class="md-block" flex-gt-xs>
+			<label for="confpass">Confirm Password:*</label> <input
+				type="password" ng-model="confpass"> 
+				</md-input-container>
+		</div>
+
+		<div layout-gt-xs="row">
+			<md-input-container class="md-block" flex-gt-xs>
+			<label for="firstName">First Name:*</label> <input type="text"
+				ng-model="firstName"> </md-input-container>
+
+			<md-input-container class="md-block" flex-gt-xs>
+			<label for="lastName">Last Name:*</label> <input type="text"
+				ng-model="lastName"> </md-input-container>
+
+			<md-input-container class="md-block" flex-gt-xs>
+			<label for="email">E-Mail:*</label> <input type="email"
+				ng-model="email"> </md-input-container>
+				
+				<md-input-container class="md-block" flex-gt-xs> <label for="country">Country*</label>
+			<md-select ng-model="country" material-select> <md-option
+				ng-repeat="country in countries" ng-value="country">{{country}}</md-option>
+			</md-select>
+			</md-input-container>
+		</div>
+
+
+
+		<div layout-gt-xs="row">
+		
+			<md-input-container class="md-block" flex-gt-xs>
+			<label for="pwdexptm">Password Expiry Time:*</label> <input
+				type="number" ng-model="pwdexptm">
+				</md-input-container>
+
+			<md-input-container class="md-block" flex-gt-xs> <label for="pwdexptime"></label>
+			<md-select ng-model="pwdexpformat" material-select> <md-option
+				ng-repeat="pwdexptime in passtime" ng-value="pwdexptime">{{pwdexptime}}</md-option>
+			</md-select> 
+			</md-input-container>
+			
+		</div>
+
+
+		<div layout-gt-xs="row">
+			<md-input-container class="md-block" flex-gt-xs>
+			<label for="acctokexptm">Access Token Expiry Time:*</label> <input
+				type="number" ng-model="acctokexptm"> </md-input-container>
+
+			<md-input-container class="md-block" flex-gt-xs> <label
+				for="acctokexpformat"></label>
+			<md-select ng-model="acctokexpformat" material-select> <md-option
+				ng-repeat="acctokenexptime in acctime" ng-value="acctokenexptime">{{acctokenexptime}}</md-option>
+			</md-select>
+			</md-input-container>
+		</div>
+		
+
+		<div layout-gt-xs="row">
+			<md-input-container class="md-block" flex-gt-xs>
+			<label for="reftokenexptime">Refresh Token Expiry Time:*</label> <input
+				type="number" ng-model="reftokenexptime"> 
+			</md-input-container>
+
+			<md-input-container class="md-block" flex-gt-xs> <label for="reftokenexptimeformat"></label>
+			<md-select ng-model="reftokenexptimeformat" material-select> <md-option
+				ng-repeat="reftokexptime in reftime" ng-value="reftokexptime">{{reftokexptime}}</md-option>
+			</md-select> 
+			</md-input-container>
+		</div>
+
+		<div layout-gt-xs="row">
+			<md-input-container class="md-block" flex-gt-xs> <label for="usertype">User
+				Type:*</label>
+			<md-select ng-model="userTyperes" material-select> <md-option
+				ng-repeat="usertype in usertypes" ng-value="usertype">{{usertype}}</md-option>
+			</md-select> </md-input-container>
+
+			<md-input-container class="md-block" flex-gt-xs> <label for="roletype">Role
+				Type:*</label>
+			<md-select ng-model="roletyperes" material-select> <md-option
+				ng-repeat="roletype in roletypes" ng-value="roletype">{{roletype}}</md-option>
+			</md-select> </md-input-container>
+		</div>
+		<div layout-gt-xs="row" layout-align="center center">
+			<md-button class="md-fab md-fab-bottom-center md-accent md-hue-2"
+			aria-label="Create User" ng-click="createUser()"> 
+			<md-icon md-svg-icon="../cloudConnectorUI/img/icons/create-group-button.svg"></md-icon>	
+		</div>
+		
+		
+
+		
+	</form>
+	<span flex-gt-xs="5"></span>
+</div>

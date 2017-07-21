@@ -1,0 +1,51 @@
+<div layout="row" layout-padding ng-controller="UserController" layout-align="center center">
+
+<md-content  class="md-padding" layout-xs="column" layout="row" layout-wrap layout-margin layout-fill>
+  <div class="md-toolbar-tools">
+          <md-input-container md-theme="input" flex>
+            <label>&nbsp;</label>
+            <input ng-model="searchtxt" placeholder="Find user">
+          </md-input-container>  
+        </div>
+    <div flex-xs="" flex-gt-xs="30" ng-repeat="user in userAll | filter : searchtxt">
+      <md-card  ng-class="{activecontactcard: user.userActivationType === 'active',inactivecontactcard: user.userActivationType === 'inactive'}">
+	  
+        <md-card-title layout-wrap aria-label="Click for details" ng-click="showUserDetails(user,$event)">
+		<md-tooltip md-direction="bottom">Click for details</md-tooltip>
+          <md-card-title-text layout-wrap>
+            <span class="md-headline">{{user.firstName}}&nbsp {{user.lastName}}</span>
+            <span class="md-subhead">UserId:{{user.userId}}</span>
+			<span class="md-subhead">{{user.email}}</span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-sm card-media">
+			<img src="../cloudConnectorUI/assets/images/users/no-image.jpg" class="md-card-image">
+			</div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="center" layout-wrap>
+          <md-button class="md-accent md-fab md-mini" aria-label="Unlock User" ng-click="unlockUser(user,$event)"> 
+		  <md-tooltip md-direction="bottom">Unlock User</md-tooltip>
+		  <md-icon md-svg-icon="img/icons/unlockuser.svg"></md-icon>
+		  </md-button>
+          <md-button class="md-accent md-fab md-mini" aria-label="Reset Password" ng-click="resetPassword(user,$event)">
+		  <md-tooltip md-direction="bottom">Reset Password</md-tooltip>
+		  <md-icon md-svg-icon="img/icons/renew.svg"></md-icon>
+		  </md-button>
+		  <md-button class="md-accent md-fab md-mini" aria-label="Renew Password Expiry Time" ng-click="renewPasswordDialog(user,$event)" >
+		  <md-tooltip md-direction="bottom">Renew Password Expiry Time</md-tooltip>
+		  <md-icon md-svg-icon="img/icons/refresh-button.svg"></md-icon>
+		  </md-button>
+		  <md-button class="md-accent md-fab md-mini"aria-label="Renew Refersh Token Expiry Time" ng-click="renewRefreshDialog(user,$event)" >
+		  <md-tooltip md-direction="bottom">Renew Refersh Token Expiry Time</md-tooltip>
+		  <md-icon md-svg-icon="img/icons/update-arrow.svg"></md-icon>
+		  </md-button>
+        </md-card-actions>
+      </md-card>
+      
+    </div>
+  </md-content>
+
+
+  
+</div>  

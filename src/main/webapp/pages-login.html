@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" class="body-full-height">
+    <head>        
+        <!-- META SECTION -->
+        <title>Cognizant Cloud Connector</title>            
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+ 
+        <!-- END META SECTION -->
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script data-semver="1.2.28" src="https://code.angularjs.org/1.2.28/angular.js" data-require="angular.js@1.2.x"></script>
+    <script src="https://code.angularjs.org/1.2.28/angular-route.js"></script>
+	<script type="text/javascript" src="js/custom/loginController.js"></script>
+	<script type="text/javascript" src="js/custom/loginSharedServices.js"></script>
+	 
+        
+        <!-- CSS INCLUDE -->        
+        <link rel="stylesheet" type="text/css" id="theme" href="css/theme-default.css"/>
+        <!-- EOF CSS INCLUDE -->                                    
+    </head>
+     <body ng-app = "loginapp" ng-controller="loginappCon">
+	  <div class="login-container">
+        <div class="login-container">
+        
+            <div class="login-box animated fadeInDown">
+                <div class="login"></div>
+                <div class="login-body">
+                    <div class="login-title"><strong>Cloud Connector Login</strong></div>
+                    <form class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="user"><font color="white">User Id*</font></label>
+                            <input id="user" type="text" ng-model="username" class="form-control" placeholder="User Id"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="pass"><font color="white">Password*</font></label>
+                            <input id="pass" type="password" ng-model="password" class="form-control" placeholder="Password"/>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="domain"><font color="white">Domain*</font></label><br/>
+                            <select id="domain" ng-model="domain"
+							ng-options="domain for domain in domainNames"></select>
+                        </div>
+                    </div>
+                    
+                      <div class="form-group">
+                        <div class="col-md-6">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button type="submit" class="btn btn-info btn-block" ng-disabled="!password||!username||!domain" ng-click="submitfunction()">Log In</button> 
+                        </div>
+                      </div>
+                    </form>
+                </div>
+                <div class="login-footer">
+                    <div class="pull-left">
+                        © 2013 - Cognizant Technology Solutions - All Rights Reserved
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+	</div>
+        
+    </body>
+</html>
+
+
+
+
+
+

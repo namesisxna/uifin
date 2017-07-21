@@ -1,0 +1,58 @@
+ <div ng-controller="ManageServiceController">
+ <div class="container">
+  <ul class="breadcrumb">
+    <li><a href="#">Home</a></li>
+    <li><a href="#Subscription">Subscription</a></li>
+    <li><a href="#Service">Service</a></li>
+    <li><a href="#ViewService">View Service</a></li>
+    <li class="active">ManageService</li>  
+  </ul>
+</div>
+ <form>
+  <div class="form-group">
+  <div class="row ">
+    <div class="col-lg-4">
+    <div class="dropdown dropdownUser">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select User
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a href="#">Doe, John [john.doe]</a></li>
+    <li><a href="#">Doe, John [walmart]</a></li>
+  </ul>
+  </div>
+  </div>
+
+  </div>
+  
+  <div class="container">
+  <div class="row rowpad">
+    <div class="col-md-5">
+      <div class="panel panel-success">
+       <div class="panel-heading">Available Destination</div>
+       <div class="panel_body_manageService"></div>
+      </div>
+    </div>
+   <div class="col-xs-1">
+<div class="btn-group-sm btnpad">
+ <button type="button" class="btn_manageService btn-primary fa fa-angle-double-right"></button>
+ <button type="button" class="btn_manageService btn-primary fa fa-step-forward"></button>
+ <button type="button" class="btn_manageService btn-primary fa fa-angle-double-left"></button>
+ <button type="button" class="btn_manageService btn-primary fa fa-step-backward"></button>
+</div>
+   </div>
+   
+    <div class="col-md-5">
+      <div class="panel panel-success">
+       <div class="panel-heading">Granted Destination</div>
+       <div class="panel_body_manageService"></div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+  
+  <div class="col-xs-1">
+  <button type="submit" class="btn btn-default submitManage fa fa-check">Submit</button></div>
+</form>
+        </div>
+        </html>

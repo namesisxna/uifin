@@ -1,0 +1,57 @@
+<div ng-controller="flowsController" layout="row" layout-padding layout-align="center center" >
+
+<md-content  layout="column" >
+  <md-toolbar style="min-height:35px">
+		 <h13  flex class="align-items">INTEGRATION FLOWS</h13>
+		</md-toolbar>  
+ <div ng-model="showMinDir" ng-value="false" flex-gt-xs=66 style="min-height:450px;min-width:1100px">
+
+        <br/>
+        <div ng-show="!showMinDir">
+  
+			<div class="md-toolbar-tools">
+          <md-input-container md-theme="input" flex>
+            <label>&nbsp;</label>
+			<input type="text" data-ng-model="filterString" placeholder="search flows">
+			</md-input-container>
+			</div>
+			
+            <tree-grid tree-data="tree_data" tree-control="myTreeControl" col-defs="col_defs" expand-on="expanding_property" on-select="my_tree_handler(branch)"  icon-leaf= "glyphicon glyphicon-globe"></tree-grid>
+        </div>
+        
+    </div>
+	
+    <div class="lock-size" layout="row" layout-align="end">
+      <md-fab-speed-dial md-open="isOpen" md-direction="left" ng-class="selectedMode">
+        <md-fab-trigger>
+          <md-button aria-label="menu" class="md-fab md-warn">
+             <md-icon md-svg-src="img/icons/menu.svg " ></md-icon>
+          </md-button>
+        </md-fab-trigger>
+
+        <md-fab-actions>
+          <md-button aria-label="collapse" class="md-fab md-raised md-mini" ng-click="myTreeControl.collapse_all()">
+		  <md-tooltip md-direction="bottom">Collapse all</md-tooltip>
+			<md-icon md-svg-src="img/icons/expand-arrow.svg " ></md-icon>
+          </md-button>
+          <md-button aria-label="expand" class="md-fab md-raised md-mini" ng-click="myTreeControl.expand_all()">
+		  <md-tooltip md-direction="bottom">Expand all</md-tooltip>
+            <md-icon md-svg-src="img/icons/expand-button.svg " ></md-icon>
+          </md-button>
+         
+        </md-fab-actions>
+      </md-fab-speed-dial>
+    </div>
+
+    
+
+  </md-content>
+    
+   
+	
+	
+	
+	</div>
+	
+   
+  

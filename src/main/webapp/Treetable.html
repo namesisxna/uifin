@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>        
+        <!-- META SECTION -->
+        <title>Cognizant cloud connector</title>            
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <!-- END META SECTION -->
+        
+        <!-- CSS INCLUDE -->                   
+        <link rel="stylesheet" type="text/css" id="theme" href="css/theme-custom.css"/>
+        <!-- EOF CSS INCLUDE -->  
+<!--FONT AWESOME ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                        
+                        
+                        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700">
+                        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+                        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.css">
+                        <style type="text/css">
+                        .loginBox {
+ max-width:  90%;
+ width: 500px
+}
+
+.stretch input  {
+ width: 100%
+}       
+                        </style>
+                        
+                      
+    </head>
+    <body  >
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-animate.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-aria.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-messages.min.js"></script>
+            <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.js"></script>
+<div ng-app="MyApp" ng-controller="AppCtrl" layout="column" layout-align="center center" layout-fill="layout-fill">
+<div layout="column" class="loginBox md-whiteframe-z1">
+<md-toolbar>
+ <h2 class="md-toolbar-tools"><span>CLOUD CONNECTOR LOGIN</span></h2>
+</md-toolbar>
+<md-content layout="column" class="md-padding">
+ <md-input-container>
+<label>Username</label>
+<input type="text" ng-model="username"/>
+ </md-input-container>
+ <md-input-container>
+<label>Password</label>
+<input type="password" ng-model="password"/>
+ </md-input-container>
+ <md-input-container class="md-icon-float md-block">
+<label>Domain*</label>
+<md-select  ng-model="domain" material-select>
+                              <md-option ng-repeat="domain in domainNames" ng-value="domain">{{domain}}</md-option>
+                           </md-select>            
+</md-input-container><br/> 
+<md-button type="submit" ng-click="submitfunction()">Login</md-button><br/>
+</md-content>
+</div>
+</div>
+<script>
+var app = angular.module('MyApp', ['ngMaterial'])
+
+.controller('AppCtrl', function($scope){
+$scope.domainNames = [ "Default" ];
+});
+</script>
+
+    
+        
+                        
+        
+    
+
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    
+    
+   
+    
+  </head>
+
+  <body ng-app = "testApp" ng-controller = "testController as vm">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="js/plugins/clipboard/ngClipboard.js"></script>
+    <script src="js/custom/script.js"></script>
+
+    <input type="text" ng-model="vm.model">
+    <button ng-click="toClipboard(vm.model)">Copy!</button>
+  </body>
+
+</html>

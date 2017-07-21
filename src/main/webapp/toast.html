@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">                  
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.css">
+   
+    
+  </head>
+
+  <body >
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-animate.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-aria.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-messages.min.js"></script>
+            <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.js"></script>
+  <div ng-controller="AppCtrl" class="inset toastdemoCustomUsage" ng-cloak="" style="height:300px; padding: 25px;" ng-app="MyApp">
+  <div layout="row">
+
+    <p>
+      Toast can have multiple actions:
+    </p>
+
+    <md-button ng-click="showCustomToast()" class="md-raised" style="padding-left: 10px;padding-right: 10px;">
+      Show Custom Toast
+    </md-button>
+
+  </div>
+<script type="text/ng-template" id="toast-template.html">
+<md-toast>
+  <span class="md-toast-text" flex>Custom toast!</span>
+ 
+  <md-button ng-click="closeToast()">
+    Close
+  </md-button>
+</md-toast>
+</script>
+<script>
+(function() {
+
+  var isDlgOpen;
+
+  angular
+    .module('MyApp',['ngMaterial', 'ngMessages'])
+    .controller('AppCtrl', function($scope, $mdToast) {
+      $scope.showCustomToast = function() {
+        $mdToast.show({
+          hideDelay   : 3000,
+          position    : 'top right',
+          controller  : 'ToastCtrl',
+          templateUrl : 'toast-template.html'
+        });
+      };
+    })
+    .controller('ToastCtrl', function($scope, $mdToast, $mdDialog) {
+
+      $scope.closeToast = function() {
+        if (isDlgOpen) return;
+
+        $mdToast
+          .hide()
+          .then(function() {
+            isDlgOpen = false;
+          });
+      };
+
+      
+    });
+
+})();
+
+</script>
+</div>
+
+
+  </body>
+
+</html>

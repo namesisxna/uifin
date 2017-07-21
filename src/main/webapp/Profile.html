@@ -1,0 +1,105 @@
+<div  ng-controller="ProfileController" class="container">
+<div  class="Profilebody">
+<aside class="profile-card">
+  <header>
+    <!-- here’s the avatar -->
+    <a target="_blank" href="#">
+      <img src="../cloudConnectorUI/img/icons/no-image.jpg" class="hoverZoomLink">
+    </a>
+</br>
+    <!-- the username -->
+    <h11>
+            {{sharedData.generalProfile.firstName}}&nbsp{{sharedData.generalProfile.lastName}}
+          </h11>
+</br>
+    <!-- and role or location -->
+		<h12>
+           <label>E-mail:</label>{{sharedData.generalProfile.email}}
+          </h12>
+		  </br>
+		  <h12>
+            <label>Country:</label> {{sharedData.generalProfile.country}}
+          </h12>
+		  
+
+  </header>
+
+  <!-- bit of a bio; who are you? -->
+  <div class="profile-bio">
+
+  
+  <md-toolbar style="min-height:35px">
+		 <h13  flex class="align-items">ACCESS CREDENTIALS</h13>
+		</md-toolbar> 
+   <!-- <md-toolbar layout="row" class="md-hue" style="min-height:16px">
+      <div class="md-toolbar-tools" >
+        <span font size="6">ACCESS CREDENTIALS</span>
+      </div>
+    </md-toolbar>-->
+
+    <md-content>
+      <md-list flex="">
+        
+        <md-list-item class="md-1-line"  ng-click="null">
+          <div class="md-list-item-text" layout="column" >
+            <p><label>User ID:</label>                   {{sharedData.accessCredentials.userId}}</p>
+          </div>
+        </md-list-item>
+        <md-divider></md-divider>
+		<md-list-item class="md-1-line"  ng-click="null">
+          <div class="md-list-item-text" layout="column">
+            <p><label>Security Domain:</label>{{sharedData.accessCredentials.securityDomain}}</p>
+          </div>
+        </md-list-item>
+		<md-divider></md-divider>
+		<md-list-item class="md-1-line"  ng-click="null">
+          <div class="md-list-item-text" layout="column">
+            <p><label>Tenant UUID:</label>                   {{sharedData.accessCredentials.tetantUUId}}</p>
+          </div>
+        </md-list-item>
+        <md-divider></md-divider>
+		<md-list-item class="md-1-line"  ng-click="null">
+          <div class="md-list-item-text" layout="column">
+            <p><label>Password Expiry Time:</label>                   {{sharedData.accessCredentials.passwordExpTime}}</p>
+          </div>
+        </md-list-item>
+        <md-divider></md-divider>
+		<md-list-item class="md-1-line"  ng-click="null">
+          <div class="md-list-item-text" layout="column">
+            <p><label>Access Token Expiry Time:</label>                   {{sharedData.accessCredentials.accessTokenExpTime}}</p>
+          </div>
+        </md-list-item>
+        <md-divider></md-divider>
+		<md-list-item class="md-1-line"  ng-click="null">
+          <div class="md-list-item-text" layout="column">
+            <p><label>Refresh Token Expiry Time:</label>                   {{sharedData.accessCredentials.refreshTokenExpTime}}</p>
+          </div>
+        </md-list-item >
+        <md-divider></md-divider>
+		<md-list-item class="md-1-line" ng-click="null">
+          <div class="md-list-item-text" layout="column">
+            <p><label>Access Token:</label>
+			<md-button flex="30" style="border: 2px solid #3F51B5;" class="md-icon-button md-primary" aria-label="Navigation" ng-click="showValue()">
+			<md-icon md-svg-icon="../cloudConnectorUI/img/icons/search.svg"></md-icon>
+			</md-button>
+			</p>
+          </div>
+        </md-list-item>
+	   <md-divider></md-divider>
+       	<md-list-item class="md-1-line" ng-click="null">
+          <div class="md-list-item-text" layout="column">
+            <p><label>Change Password:</label>
+			<md-button flex="15" class="md-raised md-primary" aria-label="Navigation" ng-click="showForm()">
+			   Click Here
+			</md-button>
+			</p>
+          </div>
+        </md-list-item>   
+		</md-list>
+		</md-content>
+
+  </div>
+
+  
+</aside>
+</div>

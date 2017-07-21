@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>Minimal example</title>
+
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+
+    <!-- JavaScript for: jQuery, angular, materialize, and angular-materialize. All of which are needed. -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.2/angular-materialize.min.js"></script>
+
+    <!-- Your app -->
+    
+</head>
+<body ng-app="materializeApp" ng-controller="BodyController">
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="section col s4">
+                <div input-field>
+                    <select ng-model="select.value" material-select>
+                        <option ng-repeat="value in select.choices">{{value}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="section col s8">
+                <h5>You selected: <b>{{select.value}}</b></h5>
+            </div>
+        </div>
+    </div>
+
+	</main>
+	<script>
+	var app = angular.module('materializeApp', ['ui.materialize'])
+    .controller('BodyController', ["$scope", function ($scope) {
+        $scope.select = {
+            value: "Option1",
+            choices: ["Option1", "I'm an option", "This is materialize", "No, this is Patrick."]
+        };
+    }]);
+	</script>
+</body>
+
+</html>

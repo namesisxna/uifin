@@ -1,0 +1,119 @@
+<div id="page-wrapper">
+			<div class="row"></div>
+
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<i class="fa fa-file-photo-o fa-fw"></i> USER PROFILE
+				</div>
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<p style="font-size: 14px;">GENERAL PROFILE</p>
+					</div>
+					<div class="panel-body">
+						<p>First Name: {{ sharedData.generalProfile.firstName }}</p>
+						<p>Last Name: {{ sharedData.generalProfile.lastName }}</p>
+						<p>Email: {{ sharedData.generalProfile.email }}</p>
+						<p>Country: {{ sharedData.generalProfile.country }}</p>
+					</div>
+				</div>
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<p style="font-size: 14px;">ACCESS CREDENTIALS</p>
+					</div>
+					<div class="panel-body">
+						<div class="tooltip-demo">
+							<p>User ID: {{sharedData.accessCredentials.userId}}</p>
+							<p>Security Domain:
+								{{sharedData.accessCredentials.securityDomain}}</p>
+							<p>Tennant UUID: {{sharedData.accessCredentials.tetantUUId}}</p>
+							<p>Password Expiry Time:
+								{{sharedData.accessCredentials.passwordExpTime}}</p>
+							<p>Access Token Expiry Time:
+								{{sharedData.accessCredentials.accessTokenExpTime}}</p>
+							<p>Refresh Token Expiry Time:
+								{{sharedData.accessCredentials.refreshTokenExpTime}}</p>
+							<!-- <p>API Tokens: ******** <button type="button" class="btn btn-primary" data-container="body" 
+                                                                                                                          data-toggle="popover" data-placement="right"
+                                                                                                                          data-content="Access Token<br>{{sharedData.accessCredentials.apiToken}}<br>
+                                                                                                                          <br>RefreshToken&#013{{sharedData.accessCredentials.refreshToken}}
+                                                                                                                         "
+                                                                                                                         >
+                                    Show
+                                </button>
+    
+                                </p> -->
+
+							<p>
+								API Tokens: ********
+								<button type="button" class="btn btn-primary"
+									data-container="body" data-toggle="popover"
+									data-placement="right"
+									data-content="<b>Access Token</b><br>{{sharedData.accessCredentials.apiToken}}<br>
+                                                                                                                          <br><b>RefreshToken</b><br>{{sharedData.accessCredentials.refreshToken}}
+                                                                                                                         ">
+									Show</button>
+
+							</p>
+							<div>
+								<p>
+									Change Password:
+									<button type="button" class="btn btn-primary"
+										data-toggle="modal" data-target="#chpass">Click Here</button>
+								</p>
+							</div>
+							<p>
+								Renew Access Token: <font color="#CFCFCF">Click Here</font>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="modal fade" id="chpass" tabindex="-1" role="dialog"
+					aria-labelledby="chpassLabel" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="modal-title" id="chpassLabel">
+									<b>Change Password</b>
+								</h4>
+								<button type="button" class="close" data-dismiss="modal"
+									aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<form>
+									<div class="form-group">
+
+										<label for="currentpass" class="form-control-label"
+											style="width: 180px; clear: left; text-align: right; padding-right: 10px">Current
+											Password:* </label> <input type="password" class="form-control-label" ng-model="currentPass">
+										<br />
+										<br /> <label for="newpass" class="form-control-label"
+											style="width: 180px; clear: left; text-align: right; padding-right: 10px">New
+											Password:* </label> <input type="password" class="form-control-label" ng-model="newPass"><br />
+										<br /> <label for="confirmpass" class="form-control-label"
+											style="width: 180px; clear: left; text-align: right; padding-right: 10px">Confirm
+											Password:* </label> <input type="password" class="form-control-label" ng-model="cnfPass"><br />
+										<br />
+										<br />
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										<button type="submit" class="btn btn-primary" ng-click="changePassword()">Submit</button>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										<button type="reset" class="btn btn-primary">Reset</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="panel-footer text-center">© 2013- Cognizant
+					Technology Solutions - All Rights Reserved</div>
+
+			</div>
+		</div>

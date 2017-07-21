@@ -1,0 +1,97 @@
+<html lang="en" ng-app="HomePageView">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+	<title>Angular Material Form</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.css">
+	<style type="text/css">
+		[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+		      display: none !important;
+		    }
+			body { font-size: 16px; }
+			md-tab-content { padding-top: 16px; }
+
+			/* adds margin to input-container having md-block class */
+			md-input-container.md-block { margin: 10px 10px; }
+	</style>
+</head>
+
+<body>
+	<!-- Container -->
+	<section layout="row" layout-padding role="main">
+		<span flex-gt-xs="15"></span>
+		<form name="registrationForm" novalidate flex-gt-xs>
+			<md-tabs md-dynamic-height="true" md-border-bottom="true" md-swipe-content="true">
+				<md-tab id="tab-personal">
+					<md-tab-label>
+						Personal
+					</md-tab-label>
+					<md-tab-body layout-padding>
+						<!-- Name -->
+						<div layout-gt-xs="row">
+							<md-input-container class="md-block" flex-gt-xs>
+								<label>First Name</label>
+								<input type="text" ng-model="student.firstName">
+							</md-input-container>
+
+							<md-input-container class="md-block" flex-gt-xs>
+								<label>Middle Name</label>
+								<input type="text" ng-model="student.middleName">
+							</md-input-container>
+
+							<md-input-container class="md-block" flex-gt-xs>
+								<label>Last Name</label>
+								<input type="text" ng-model="student.lastName">
+							</md-input-container>
+						</div>
+
+						<div layout-gt-xs="row">
+
+							<md-input-container class="md-block" flex-gt-xs>
+								<md-radio-group ng-model="student.gender" layout="row">
+									<md-radio-button value="male" class="md-primary" checked="checked">Male</md-radio-button>
+									<md-radio-button value="female" class="md-primary"> Female</md-radio-button>
+								</md-radio-group>
+							</md-input-container>
+								
+							<md-input-container class="md-block" flex-gt-xs>
+								<label>Birthdate</label>
+								<md-datepicker ng-model="student.birthdate"></md-datepicker>
+							</md-input-container>
+							
+							<div flex-gt-xs></div>
+						</div>
+					</md-tab-body>
+				</md-tab>
+				<md-tab id="tab-education">
+					<md-tab-label>
+						Education
+					</md-tab-label>
+					<md-tab-body>
+						Education Details
+					</md-tab-body>
+				</md-tab>
+			</md-tabs>
+			
+			<md-button class="md-fab md-fab-bottom-right md-accent md-hue-2" aria-label="Create a student">
+				<md-icon>save</md-icon>
+			</md-button>
+		</form>
+		<span flex-gt-xs="15"></span>
+	</section>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-animate.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-aria.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-messages.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.js"></script>
+	<script type="text/javascript" src="js/custom/matCont.js"></script>
+</body>
+
+</html>
